@@ -1,0 +1,46 @@
+:root {
+    --primary-color : #937DC2;
+    --secondary-color : #62A0C2;
+    --danger-color : #C13333;
+    --green-color : #42da47;
+    
+}
+
+.toast {
+    position: fixed;
+    z-index: 12;
+    top : 10px;
+    left : 50%;
+    transform : translate(-50%,-10rem);
+    transition : .3s linear;
+    padding : .5rem 3rem;
+    border-radius : 10px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.22);
+}
+
+.toast.active {
+    transform : translate(-50%,0);
+}
+
+.toast.success {
+    background-color: var(--green-color);
+    color : white;
+}
+
+.toast.secondary {
+    background-color: var(--secondary-color);
+    color : white;
+}
+
+.toast.error {
+    background-color: var(--danger-color);
+    color : white;
+}
+
+.toast .btn-close {
+    position: absolute;
+    right : 10px;
+    top : 2px;
+    font-size: 1.3rem;
+    cursor : pointer;
+}

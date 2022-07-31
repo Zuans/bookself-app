@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookself App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/modal.css">
+    <link rel="stylesheet" href="./style/toast.css">
+</head>
+<body>
+    <div class="modal-container ">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h1 class="modal-title">Another</h1>
+            </div>
+            <div class="modal-header">
+                <form action="" id="form-edit">
+                    <div class="field-group">
+                        <label for="edit-name">Name</label>
+                        <input type="text" name="edit-name" id="edit-name">
+                    </div>
+                    <div class="field-group">
+                        <label for="edit-author">Author</label>
+                        <input type="text" name="edit-author" id="edit-author">
+                    </div>
+                    <div class="field-group">
+                        <label for="edit-year">year</label>
+                        <input type="number" name="edit-year" id="edit-year">
+                    </div>
+                    <button id="edit-submit">Edit now</button>
+                </form>
+            </div>
+            <div class="footer">
+
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <h1 class="navbrand">Bookself App</h1>
+        </nav>
+    </header>
+    <main class="container ">
+        <div class="left-container">
+            <section class="search-container">
+                <input type="text" class="input-book" id="search-input" placeholder="type book name here...">
+                <button class="btn-search">Search</button>
+            </section>
+            <section class="find-container card-container active">
+                <h1 class="title-section">Find Book</h1>         
+                <ul class="find-book-list">
+                </ul>
+                <div class="arrow-down" data-query=".find-book-list">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </section>
+            <section class="add-container card-container">
+                <h1 class="title-section">Add Book</h1>
+                <form action="" class="add-book-form" id="add-book-form">
+                    <div class="field-group">
+                        <label for="name">Book name</label>
+                        <input type="text" name="name" id="book-name">
+                    </div>
+                    <div class="field-group">
+                        <label for="author">Book author</label>
+                        <input type="text" name="author" id="book-author">
+                    </div>
+                    <div class="field-group">
+                        <label for="year">Book year</label>
+                        <input type="number" name="year" id="book-year">
+                    </div>
+                    <div class="field-group">
+                        <button class="btn-submit">Add book</button>
+                    </div>
+                </form>
+            </section>
+            <section class="history-container card-container">
+                <h1 class="title-section">Recent History</h1>
+                <ul class="history-list">
+                    <li class="history-item">
+                        <div class="list-type"></div>
+                        <div class="status-label add">Add</div>
+                        <p class="book-name">Another</p>
+                        <p class="date">2312123</p>
+                    </li>
+                    <li class="history-item">
+                        <div class="list-type"></div>
+                        <div class="status-label delete">Add</div>
+                        <p class="book-name">Another</p>
+                        <p class="date">2312123</p>
+                    </li>
+                    <li class="history-item">
+                        <div class="list-type"></div>
+                        <div class="status-label re-add">Add</div>
+                        <p class="book-name">Another</p>
+                        <p class="date">2312123</p>
+                    </li>
+                    <li class="history-item">
+                        <div class="list-type"></div>
+                        <div class="status-label done">Add</div>
+                        <p class="book-name">Another</p>
+                        <p class="date">2312123</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="right-container">
+            <section class="uncomplete-container card-container">
+                <h1 class="title-section">Uncomplete Book</h1>
+                <ul class="uncomplete-list">
+                    <li class="uncomplete-item">
+                        <div class="book-info">
+                            <h2 class="book-name">
+                                Another
+                                <span class="separator">-</span>
+                                <span class="book-year">2012</span>
+                            </h2>
+                            <p class="book-author">DNAOCKo</p>
+                        </div>
+                        <div class="book-action">
+                            <div class="btn-action btn-done"><i class="fa-solid fa-check "></i></div>
+                            <div class="btn-action btn-trash">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="arrow-down" data-query=".uncomplete-list">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </section>
+            <section class="complete-container card-container">
+                <h1 class="title-section">Complete Book</h1>
+                <ul class="complete-list">
+                    <li class="complete-item">
+                        <div class="book-info">
+                            <h2 class="book-name">
+                                Another
+                                <span class="separator">-</span>
+                                <span class="book-year">2012</span>
+                            </h2>
+                            <p class="book-author">DNAOCKo</p>
+                        </div>
+                        <div class="book-action">
+                            <div class="btn-action btn-re-add"><i class="fa-solid fa-check "></i></div>
+                            <div class="btn-action btn-trash">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="arrow-down" data-query=".complete-list">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <h2>Made With
+            <i class="fa-solid fa-heart heart-icon"></i>
+            By Juan (2022)
+        </h2>
+    </footer>
+    <script src="./script/localStorage.js"></script>
+    <script src="./script/toast.js"></script>
+    <script src="./script/modal.js"></script>
+    <script src="./script/book.js"></script>
+</body>
+</html>

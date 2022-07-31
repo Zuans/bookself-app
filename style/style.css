@@ -1,0 +1,531 @@
+* {
+    padding : 0;
+    margin : 0;
+    box-sizing : border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    position : relative;
+}
+
+ :root {
+     --primary-color : #937DC2;
+     --secondary-color : #62A0C2;
+     --danger-color : #C13333;
+     --green-color : #35c153;
+     
+ }
+
+ ul li {
+     list-style-type: none;
+ }
+
+
+.container {
+    max-width: 1100px;
+    margin : 60px auto;
+}
+
+
+
+
+
+header {
+    background-color : var(--primary-color);
+    color : white;
+    padding  : 15px 20px;
+}
+
+main {
+    display: flex; 
+    margin-top : 60px;
+    flex-wrap: wrap;
+}
+
+main .left-container {
+    flex : 45%;
+    width: 100%;
+    min-width: 400px;
+    max-width: 500px;
+}
+
+main .book-name {
+    max-width: 250px;
+    word-break: break-word;
+}
+
+main .right-container {
+    flex : 55%;
+    width: 100%;
+    min-width: 450px;
+    max-width: 550px;
+}
+
+
+main .right-container .title-section,
+main .left-container .title-section {
+    margin-bottom : 25px;
+}
+
+
+main .right-container  .arrow-down,
+main .left-container  .arrow-down {
+    display: flex;
+    justify-content: center;
+    font-size : 2rem;
+    cursor : pointer;
+    transition : .2s linear;
+}
+
+main .right-container  .arrow-down:hover,
+main .left-container  .arrow-down:hover {
+    transform: scale(1.3);
+}
+
+main .left-container .search-container {
+    display: flex;
+}
+
+main .left-container .search-container .input-book { 
+    flex : 1 1 auto;
+    border : 2px solid var(--primary-color);
+    border-radius: 20px;
+    padding : 0 15px;
+    margin-right : 5px;
+}
+
+main .left-container .search-container .input-book:focus {
+    background-color: var(--primary-color);
+    color : white;
+    outline: none;
+}
+
+main .left-container .search-container .input-book:focus::placeholder {
+    color : white;
+}
+
+main .left-container .search-container .input-book:focus::ms-input-placeholder {
+    color : white;
+
+}
+
+
+main .left-container .search-container .btn-search {
+    color : white;
+    background-color : var(--primary-color);
+    border : none;
+    border-radius: 20px;
+    padding : 10px 22px;
+    font-weight: bold;
+    margin : 0 5px;
+    font-size: 22px;
+    cursor : pointer;
+}
+
+.card-container {
+    background-color : #f0f0f0;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin-top : 30px;
+    padding : 20px;
+}
+
+main .left-container .search-container .btn-search:hover {
+    background-color : #b6a0e7
+}
+
+main .left-container .find-container {
+    display : none;
+}
+
+main .left-container .find-container.active {
+    display: block;
+}
+
+main .left-container .find-container .title-section  {
+    color : #303030;
+}
+
+main .left-container  .find-container .arrow-down {
+    color : #303030;
+}
+
+main .left-container .find-container .find-book-list {
+    max-height: 330px;
+    overflow-y : auto;
+}
+
+main .left-container .find-container .find-book-list .book-header,
+main .left-container .find-container .find-book-list .book-info {
+    display: flex;
+    justify-content: space-between;
+    margin : 10px 0;
+}
+
+
+main .left-container .find-container .find-book-list .book-item {
+    color : white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom : 10px;
+}
+
+main .left-container .find-container .find-book-list .book-item.complete {
+    background-color : var(--primary-color);
+
+}
+
+main .left-container .find-container .find-book-list .book-item.uncomplete {
+    background-color : var(--secondary-color);
+}
+
+main .left-container .find-container .find-book-list .book-header .separator,
+main .left-container .find-container .find-book-list .book-header .book-year {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+
+main .left-container .find-container .find-book-list .book-info .book-author {
+    font-size : 1.3rem;
+}
+
+main .left-container .find-container .find-book-list .book-info .book-action * {
+    margin : 0 5px;
+    font-size : 1.5rem;
+}
+
+main .left-container .find-container .find-book-list .book-info .book-action * {
+    cursor : pointer;
+    transition : .2s linear;
+}
+
+main .left-container .find-container .find-book-list .book-info .book-action *:hover {
+    transform : scale(1.3);
+}
+
+main .left-container .find-container .find-book-list .book-info .book-action .btn-re-add  {
+    color : var(--green-color)
+}
+
+
+main .left-container .find-container .find-book-list .book-info .book-action .btn-trash  {
+    color : var(--danger-color)
+} 
+
+main .left-container .find-container .find-book-list .book-info .book-action .btn-done  {
+    color : var(--primary-color)
+} 
+
+main .left-container .find-container .find-book-list .book-info .book-action .btn-edit {
+    color : #414141;
+}
+
+main .left-container  .add-container .title-section{
+    color : var(--primary-color);
+}
+
+main .left-container  .add-container .add-book-form .field-group {
+    margin-bottom: 25px;
+}
+
+main .left-container  .add-container .add-book-form .field-group label {
+    display: block;
+    color : var(--primary-color);
+    margin-bottom : 10px;
+}
+
+main .left-container  .add-container .add-book-form .field-group input {
+    border : none;
+    width: 100%;
+    background-color : white;
+    border-radius : 10px;
+    padding : 5px 10px;
+}
+
+main .left-container  .add-container .add-book-form .field-group .btn-submit {
+    width: 100%;
+    background-color : var(--primary-color);
+    color : white;
+    font-size : 1.5rem;
+    border-radius : 10px;
+    border : none;
+    padding: 7px 14px;
+    cursor : pointer;
+    font-weight: bold;
+}
+
+
+main .left-container  .add-container .add-book-form .field-group .btn-submit:hover {
+    background-color : #b6a0e7;
+}
+
+main .left-container .history-container {
+    color : var(--primary-color);
+}
+
+main .left-container .history-container .history-list .history-item {
+    display: flex;
+    position : relative;
+    margin-bottom: 20px;
+}
+
+
+main .left-container .history-container .history-list .history-item * {
+    margin-right : 20px;
+}
+
+main .left-container .history-container .history-list .history-item .status-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding : 5px 15px;
+    border-radius : 5px;
+    position : relative;
+    color : white;
+    font-weight: bold;
+    font-size : 1rem;
+    margin-left : 35px;
+    text-transform: uppercase;
+}
+
+main .left-container .history-container .history-list .history-item .status-label.add {
+    background-color : var(--secondary-color);
+}
+
+main .left-container .history-container .history-list .history-item .status-label.done {
+    background : var(--primary-color);
+}
+
+main .left-container .history-container .history-list .history-item .status-label.delete {
+    background : var(--danger-color);
+}
+
+main .left-container .history-container .history-list .history-item .status-label.edit {
+    background-color : var(--secondary-color);
+}
+
+main .left-container .history-container .history-list .history-item .status-label.re-add {
+    background : var(--green-color);
+}
+
+
+
+
+main .left-container .history-container .history-list .history-item .list-type {
+    position: absolute;
+    top : 30%;
+    left : 0;
+    transform  : translateY(-50%);
+    width : 20px;
+    height : 20px;
+    border-radius : 5px;
+    margin-right : 30px;
+    background-color : white;
+    border : 3px solid var(--primary-color);
+    transform : rotate(45deg)
+}
+
+main .left-container .history-container .history-list .history-item .book-name {
+    font-size : 1.4rem;
+    font-weight : bold;
+}
+
+main .left-container .history-container .history-list .history-item .date {
+    flex : 1 1 auto;
+    text-align : right;
+    margin : 0;
+}
+
+main .right-container {
+    margin-left : 40px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container  {
+        padding : 0 20px;
+    }
+
+    main .left-container,
+    main .right-container {
+        margin-left:  0;
+        min-width: 400px;
+        max-width: 500px;
+    }
+
+    main .right-container {
+        margin-top : 30px;
+    }
+}
+
+main .right-container .title-section {
+    color : var(--primary-color);
+}
+
+main .right-container .uncomplete-container {
+    margin-top : 0;
+}
+
+main .right-container .uncomplete-container .title-section {
+    color : var(--secondary-color);
+}
+
+main .right-container .uncomplete-container .arrow-down  {
+    color : var(--secondary-color);
+}
+
+
+
+main .right-container .complete-container .arrow-down  {
+    color : var(--primary-color);
+}
+
+main .right-container .complete-list,
+main .right-container .uncomplete-list {
+     max-height: 330px;
+     overflow-y : auto;
+}
+
+main .right-container .uncomplete-list .uncomplete-item,
+main .right-container .complete-list .complete-item {
+    display: flex;
+    position : relative;
+    overflow : hidden;
+    justify-content : space-between;
+    padding: 10px 20px;
+    padding-right : 0;
+    margin-bottom : 10px;
+    background-color : var(--secondary-color);
+    color : white;
+    border-radius : 10px;
+}
+
+main .right-container .complete-list .complete-item  {
+    background-color : var(--primary-color);
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-name,
+main .right-container .complete-list .complete-item .book-name {
+    margin-bottom : 10px;
+}
+
+
+main .right-container .uncomplete-list .uncomplete-item .book-name .book-year ,
+main .right-container .uncomplete-list .uncomplete-item .book-name .separator,
+main .right-container .complete-list .complete-item .book-name .book-year ,
+main .right-container .complete-list .complete-item .book-name .separator   {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+
+main .right-container .uncomplete-list .uncomplete-item .book-author,
+main .right-container .complete-list .complete-item .book-author {
+    font-size : 1.3rem;
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-action,
+main .right-container .complete-list .complete-item .book-action {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right : 0;
+    top : 0;
+    height : 100%;
+
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-done,
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-trash,
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-edit,
+main .right-container .complete-list .complete-item .book-action  .btn-edit,
+main .right-container .complete-list .complete-item .book-action  .btn-re-add,
+main .right-container .complete-list .complete-item .book-action  .btn-trash {
+    padding : 0 15px;
+    height: 100%;
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-done i,
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-trash i,
+main .right-container .complete-list .complete-item .book-action  .btn-re-add i,
+main .right-container .complete-list .complete-item .book-action  .btn-trash i,
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-edit i,
+main .right-container .complete-list .uncomplete-item .book-action  .btn-edit i  {
+    font-size : 1.3rem;
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-action .btn-action,
+main .right-container .complete-list .complete-item .book-action .btn-action {
+    display: flex;
+    align-items: center;
+    cursor : pointer;
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-done{
+    background-color: var(--primary-color);
+
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-trash {
+    background-color: var(--danger-color);
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-edit {
+    background-color: #414141;;
+}
+
+main .right-container .complete-list .complete-item .book-action  .btn-edit {
+    background-color: #414141;
+}
+
+main .right-container .complete-list .complete-item .book-action  .btn-re-add {
+    background-color : var(--secondary-color);
+}
+
+main .right-container .complete-list .complete-item .book-action  .btn-trash {
+    background-color : var(--danger-color);
+}
+
+
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-done:hover {
+    background-color: #a58bdf;
+
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-trash:hover {
+    background-color: #e94e4e
+}
+
+main .right-container .uncomplete-list .uncomplete-item .book-action  .btn-edit:hover {
+    background-color: #4d4d4d;
+}
+
+main .right-container .complete-list .complete-item .book-action  .btn-re-add:hover {
+    background-color: #6bb5dd;
+
+}
+
+main .right-container .complete-list .complete-item .book-action  .btn-edit:hover {
+    background-color: #4d4d4d;
+}
+
+
+main .right-container .complete-list .complete-item .book-action  .btn-trash:hover {
+    background-color: #e94e4e
+}
+
+footer {
+    margin-top: 60px;
+    padding : 20px;
+    display: flex;
+    justify-content: center;
+    color : white;
+    background-color: var(--primary-color);
+}
+
+footer .heart-icon {
+    color : rgb(250, 0, 167);
+    margin : 0 10px;
+}
